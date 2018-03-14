@@ -14,7 +14,7 @@ jobs:
 
       - run: mvn dependency:go-offline
       
-      - script: "mvn cobertura:cobertura"
+      - run: mvn cobertura:cobertura
         
       # run tests!
       - run: mvn integration-test
