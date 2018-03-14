@@ -13,7 +13,11 @@ jobs:
       - checkout
 
       - run: mvn dependency:go-offline
+      
+      - script: "mvn cobertura:cobertura"
         
       # run tests!
       - run: mvn integration-test
+      
+      - run: bash <(curl -s https://codecov.io/bash)
 
