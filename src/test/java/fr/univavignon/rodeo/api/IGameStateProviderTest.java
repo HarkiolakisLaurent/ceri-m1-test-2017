@@ -1,0 +1,13 @@
+package fr.univavignon.rodeo.api;
+
+import org.junit.*;
+import org.mockito.*;
+
+public interface IGameStateProviderTest {
+	
+	@Mock
+	IGameState gameState;
+	
+	protected IGameStateProvider getTestInstance();
+
+}
