@@ -3,11 +3,13 @@ package fr.univavignon.rodeo.api;
 import org.junit.*;
 import org.mockito.*;
 
+import fr.univavignon.rodeo.api.ISpecie;
+
 public interface ISpecieTest {
 
 	@Mock
-	ISpecie specie;
+	protected ISpecie specie;
 	
-	protected ISpecie getTestInstance();
+	ISpecie getTestInstance();
 	
 }

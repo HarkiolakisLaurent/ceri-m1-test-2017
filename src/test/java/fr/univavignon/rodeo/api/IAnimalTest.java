@@ -2,14 +2,22 @@ package fr.univavignon.rodeo.api;
 
 import org.junit.*;
 import org.mockito.*;
+import static org.mockito.Mockito.when;
+
+
+import fr.univavignon.rodeo.api.IAnimal;
 
 public interface IAnimalTest {
 
 	@Mock
-	IAnimal animal;
+	protected IAnimal animal;
 	
-	protected IAnimal getTestInstance();
+	//private static mock = new Animal("10",false,false,false);
 	
-	animal = new Animal("10",false,false,false);
+	IAnimal getTestInstance();
+	
+	void configureIAnimal(IAnimal mock);
+	
+	
 	
 }

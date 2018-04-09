@@ -3,11 +3,16 @@ package fr.univavignon.rodeo.api;
 import org.junit.*;
 import org.mockito.*;
 
+import fr.univavignon.rodeo.api.IEnvironmentProvider;
+
 public interface IEnvironmentProviderTest {
 	
 	@Mock
-	IEnvironmentProvider environmentProvider;
+	protected IEnvironmentProvider environmentProvider;
 	
-	protected IEnvironmentProvider getTestInstance();
+	IEnvironmentProvider getTestInstance();
+	
+	@Test
+	public void testCreateEnvironment();
 	
 }
