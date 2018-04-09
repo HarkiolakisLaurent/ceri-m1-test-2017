@@ -1,4 +1,6 @@
-# ceri-m2-test
+# ceri-m1-test
+
+Par HARKIOLAKIS Laurent {<img src="https://circleci.com/gh/HarkiolakisLaurent/ceri-m1-test-2017.svg?style=svg" alt="CircleCI" />}[https://circleci.com/gh/HarkiolakisLaurent/ceri-m1-test-2017]
 
 ## Resources
 
