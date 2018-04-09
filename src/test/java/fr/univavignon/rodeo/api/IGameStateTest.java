@@ -31,8 +31,21 @@ public class IGameStateTest {
 	@Mock
 	protected IAnimal animal;
 	
+	private List<String> availableEnvironments = new ArrayList<String>();
+	private List<ISpecie> species = new ArrayList<ISpecie>();
+	private List<IAnimal> animals = new ArrayList<IAnimal>();
+	
 	@Before
 	public void setUp() {
+		availableEnvironments.add("NextEnvironment");
+		Mockito.when(environmentProvider.getAvailableEnvironments()).thenReturn(availableEnvironments);
+		Mockito.when(environment.getSpecies()).thenReturn(species);
+		animals.add(animal);
+		Mockito.when(specie.getAnimals()).thenReturn(animals);
+		species.add(specie);
+		Mockito.when(environment.getSpecies()).thenReturn(species);
+		Mockito.when(getTestInstance().getSpecieLevel(specie)).thenReturn(SpecieLevel.NOVICE);
+		Mockito.when(getTestInstance().getProgression()).thenReturn(1);
 		Mockito.doThrow(new IllegalStateException()).when(getTestInstance()).exploreArea();
 		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).catchAnimal(null);
 		Mockito.doThrow(new IllegalStateException()).when(getTestInstance()).catchAnimal(animal);
@@ -45,11 +58,6 @@ public class IGameStateTest {
 	
 	@Test
 	public void testExploreArea() {
-		List<String> availableEnvironments = new ArrayList<String>();
-		availableEnvironments.add("NextEnvironment");
-		List<ISpecie> species = new ArrayList<ISpecie>();
-		Mockito.when(environmentProvider.getAvailableEnvironments()).thenReturn(availableEnvironments);
-		Mockito.when(environment.getSpecies()).thenReturn(species);
 		assertEquals(environmentProvider.getAvailableEnvironments(),availableEnvironments);
 		assertEquals(environment.getSpecies(),species);
 		
@@ -63,12 +71,6 @@ public class IGameStateTest {
 	
 	@Test
 	public void testCatchAnimal() {
-		List<IAnimal> animals = new ArrayList<IAnimal>();
-		animals.add(animal);
-		Mockito.when(specie.getAnimals()).thenReturn(animals);
-		List<ISpecie> species = new ArrayList<ISpecie>();
-		species.add(specie);
-		Mockito.when(environment.getSpecies()).thenReturn(species);
 		assertEquals(environment.getSpecies().contains(specie),true);
 	}
 	
@@ -84,7 +86,6 @@ public class IGameStateTest {
 	
 	@Test
 	public void testGetSpecieLevel() {
-		Mockito.when(getTestInstance().getSpecieLevel(specie)).thenReturn(SpecieLevel.NOVICE);
 		assertEquals(getTestInstance().getSpecieLevel(specie),SpecieLevel.NOVICE);
 	}
 	
@@ -95,7 +96,6 @@ public class IGameStateTest {
 	
 	@Test
 	public void testGetProgression() {
-		Mockito.when(getTestInstance().getProgression()).thenReturn(1);
 		assertEquals(getTestInstance().getProgression(),1);
 	}
 

@@ -2,6 +2,8 @@ package fr.univavignon.rodeo.api.impl;
 
 import org.junit.*;
 
-public class AnimalTest {
+import fr.univavignon.rodeo.api.IAnimalTest;
+
+public class AnimalTest extends IAnimalTest{
 
 }

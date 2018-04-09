@@ -2,6 +2,8 @@ package fr.univavignon.rodeo.api.impl;
 
 import org.junit.*;
 
-public class GameStateProviderTest {
+import fr.univavignon.rodeo.api.IGameStateProviderTest;
+
+public class GameStateProviderTest extends IGameStateProviderTest {
 
 }

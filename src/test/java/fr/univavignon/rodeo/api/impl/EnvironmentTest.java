@@ -2,6 +2,8 @@ package fr.univavignon.rodeo.api.impl;
 
 import org.junit.*;
 
-public class EnvironmentTest {
+import fr.univavignon.rodeo.api.IEnvironmentTest;
+
+public class EnvironmentTest extends IEnvironmentTest {
 
 }
