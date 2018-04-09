@@ -16,15 +16,17 @@ public class IGameStateProviderTest {
 	@Mock
 	protected IGameStateProvider gameStateProvider;
 	
+	@Mock
+	protected IGameState gameState;
+	
 	protected IGameStateProvider getTestInstance() {
 		return gameStateProvider;
 	}
 	
 	@Test
 	public void testGet() {
-		IGameState gameState = null;
-		Mockito.when(getTestInstance().get("")).thenReturn(gameState);
-		assertEquals(getTestInstance().get(""),gameState);
+		Mockito.when(getTestInstance().get("TestGameState")).thenReturn(gameState);
+		assertEquals(getTestInstance().get("TestGameState"),gameState);
 		
 	}
 
