@@ -2,17 +2,22 @@ package fr.univavignon.rodeo.api;
 
 import org.junit.*;
 import org.mockito.*;
+import org.mockito.junit.*;
 
 import fr.univavignon.rodeo.api.IGameStateProvider;
 
-public interface IGameStateProviderTest {
+public class IGameStateProviderTest {
 	
 	@Mock
 	protected IGameStateProvider gameStateProvider;
 	
-	IGameStateProvider getTestInstance();
+	protected IGameStateProvider getTestInstance() {
+		return gameStateProvider;
+	}
 	
 	@Test
-	public void testCreateGameState();
+	public void testCreateGameState() {
+		
+	}
 
 }

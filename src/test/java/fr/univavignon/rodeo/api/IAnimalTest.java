@@ -3,20 +3,25 @@ package fr.univavignon.rodeo.api;
 import org.junit.*;
 import org.mockito.*;
 import static org.mockito.Mockito.when;
+import org.mockito.junit.*;
 
 
 import fr.univavignon.rodeo.api.IAnimal;
 
-public interface IAnimalTest {
+public class IAnimalTest {
 
 	@Mock
 	protected IAnimal animal;
 	
 	//private static mock = new Animal("10",false,false,false);
 	
-	IAnimal getTestInstance();
+	protected IAnimal getTestInstance() {
+		return animal;
+	}
 	
-	void configureIAnimal(IAnimal mock);
+	void configureIAnimal(IAnimal mock) {
+		
+	}
 	
 	
 	

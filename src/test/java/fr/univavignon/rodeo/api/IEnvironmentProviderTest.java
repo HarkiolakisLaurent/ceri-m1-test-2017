@@ -2,17 +2,21 @@ package fr.univavignon.rodeo.api;
 
 import org.junit.*;
 import org.mockito.*;
+import org.mockito.junit.*;
 
-import fr.univavignon.rodeo.api.IEnvironmentProvider;
-
-public interface IEnvironmentProviderTest {
+public class IEnvironmentProviderTest {
 	
 	@Mock
 	protected IEnvironmentProvider environmentProvider;
 	
-	IEnvironmentProvider getTestInstance();
+	protected IEnvironmentProvider getTestInstance() {
+		return environmentProvider;
+		
+	}
 	
 	@Test
-	public void testCreateEnvironment();
+	public void testCreateEnvironment() {
+		
+	}
 	
 }
