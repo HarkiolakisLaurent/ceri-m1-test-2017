@@ -1,5 +1,7 @@
 package fr.univavignon.rodeo.api;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.*;
 import org.mockito.*;
 import org.mockito.junit.*;
@@ -7,6 +9,9 @@ import org.mockito.junit.*;
 import fr.univavignon.rodeo.api.IGameStateProvider;
 
 public class IGameStateProviderTest {
+	
+	@Rule
+	public MockitoRule rule = MockitoJUnit.rule();
 	
 	@Mock
 	protected IGameStateProvider gameStateProvider;
@@ -16,7 +21,10 @@ public class IGameStateProviderTest {
 	}
 	
 	@Test
-	public void testCreateGameState() {
+	public void testGet() {
+		IGameState gameState = null;
+		Mockito.when(getTestInstance().get("")).thenReturn(gameState);
+		assertEquals(getTestInstance().get(""),gameState);
 		
 	}
 
