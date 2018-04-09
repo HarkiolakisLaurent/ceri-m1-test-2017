@@ -6,13 +6,7 @@ import org.mockito.*;
 public interface IGameStateTest {
 	
 	@Mock
-	IGameStateProvider gameStateProvider;
-	
-	@Mock
-	ISpecie specie;
-	
-	@Mock
-	IAnimal animal;
+	IGameState gameState;
 	
 	protected IGameState getTestInstance();
 

@@ -6,7 +6,7 @@ import org.mockito.*;
 public interface IGameStateProviderTest {
 	
 	@Mock
-	IGameState gameState;
+	IGameStateProvider gameStateProvider;
 	
 	protected IGameStateProvider getTestInstance();
 

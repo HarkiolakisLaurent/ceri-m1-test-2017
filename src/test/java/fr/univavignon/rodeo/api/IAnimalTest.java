@@ -6,11 +6,10 @@ import org.mockito.*;
 public interface IAnimalTest {
 
 	@Mock
-	ISPecie specie;
-	
-	@Mock
-	IGameState gameState;
+	IAnimal animal;
 	
 	protected IAnimal getTestInstance();
+	
+	animal = new Animal("10",false,false,false);
 	
 }

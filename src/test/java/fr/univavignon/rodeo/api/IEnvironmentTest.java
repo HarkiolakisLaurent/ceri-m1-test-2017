@@ -6,10 +6,7 @@ import org.mockito.*;
 public interface IEnvironmentTest {
 
 	@Mock
-	IEnvironmentProvider environmentProvider;
-	
-	@Mock
-	ISpecie specie;
+	IEnvironment environment;
 	
 	protected IEnvironment getTestInstance();
 	
