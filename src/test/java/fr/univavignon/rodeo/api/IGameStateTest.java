@@ -36,6 +36,7 @@ public class IGameStateTest {
 		Mockito.doThrow(new IllegalStateException()).when(getTestInstance()).exploreArea();
 		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).catchAnimal(null);
 		Mockito.doThrow(new IllegalStateException()).when(getTestInstance()).catchAnimal(animal);
+		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).getSpecieLevel(null);
 	}
 	
 	IGameState getTestInstance() {
@@ -74,7 +75,6 @@ public class IGameStateTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testCatchAnimalIllegalArgumentException() {
 		getTestInstance().catchAnimal(null);
-		
 	}
 	
 	@Test(expected = IllegalStateException.class)
@@ -86,6 +86,11 @@ public class IGameStateTest {
 	public void testGetSpecieLevel() {
 		Mockito.when(getTestInstance().getSpecieLevel(specie)).thenReturn(SpecieLevel.NOVICE);
 		assertEquals(getTestInstance().getSpecieLevel(specie),SpecieLevel.NOVICE);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testGetSpecieLevelIllegalArgumentException() {
+		getTestInstance().getSpecieLevel(null);
 	}
 	
 	@Test

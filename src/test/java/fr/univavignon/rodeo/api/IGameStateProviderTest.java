@@ -19,6 +19,11 @@ public class IGameStateProviderTest {
 	@Mock
 	protected IGameState gameState;
 	
+	@Before
+	public void setUp() {
+		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).get(null);
+	}
+	
 	protected IGameStateProvider getTestInstance() {
 		return gameStateProvider;
 	}
@@ -27,6 +32,12 @@ public class IGameStateProviderTest {
 	public void testGet() {
 		Mockito.when(getTestInstance().get("TestGameState")).thenReturn(gameState);
 		assertEquals(getTestInstance().get("TestGameState"),gameState);
+		
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testGetIllegalArgumentException() {
+		getTestInstance().get(null);
 		
 	}
 

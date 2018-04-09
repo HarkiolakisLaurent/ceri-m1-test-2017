@@ -17,6 +17,11 @@ public class IEnvironmentProviderTest {
 	@Mock
 	protected IEnvironmentProvider environmentProvider;
 	
+	@Before
+	public void setUp() {
+		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).getEnvironment(null);
+	}
+	
 	protected IEnvironmentProvider getTestInstance() {
 		return environmentProvider;
 		
@@ -36,6 +41,11 @@ public class IEnvironmentProviderTest {
 		IEnvironment environment = null;
 		Mockito.when(getTestInstance().getEnvironment("")).thenReturn(environment);
 		assertEquals(getTestInstance().getEnvironment(""),environment);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testGetEnvironmentIllegalArgumentException() {
+		getTestInstance().getEnvironment(null);
 	}
 	
 }
