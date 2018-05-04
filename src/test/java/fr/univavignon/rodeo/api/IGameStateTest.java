@@ -35,8 +35,6 @@ public class IGameStateTest {
 	protected List<ISpecie> species = new ArrayList<ISpecie>();
 	protected List<IAnimal> animals = new ArrayList<IAnimal>();
 	
-	public void setGameState(IGameState gameState) {this.gameState = gameState;}
-	
 	@Before
 	public void setUp() {
 		availableEnvironments.add("NextEnvironment");
