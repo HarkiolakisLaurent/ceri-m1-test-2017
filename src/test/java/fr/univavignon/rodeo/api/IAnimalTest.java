@@ -18,13 +18,13 @@ public class IAnimalTest {
 	@Mock
 	protected IAnimal animal;
 	
-	/*@Before
+	@Before
 	public void setUp() {
 		Mockito.when(getTestInstance().getXP()).thenReturn(1);
 		Mockito.when(getTestInstance().isSecret()).thenReturn(true);
 		Mockito.when(getTestInstance().isEndangered()).thenReturn(true);
 		Mockito.when(getTestInstance().isBoss()).thenReturn(true);
-	}*/
+	}
 	
 	protected IAnimal getTestInstance() {
 		return animal;

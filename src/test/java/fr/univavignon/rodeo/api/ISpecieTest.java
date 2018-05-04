@@ -26,13 +26,13 @@ public class ISpecieTest {
 		return specie;
 	}
 
-	/*@Before
+	@Before
 	public void setUp() {
 		Mockito.when(getTestInstance().getArea()).thenReturn(1);
 		for (int i = 0;i<3;i++)
 			animals.add(animal);
 		Mockito.when(getTestInstance().getAnimals()).thenReturn(animals);
-	}*/
+	}
 	
 	@Test
 	public void testGetArea() {

@@ -35,7 +35,9 @@ public class IGameStateTest {
 	protected List<ISpecie> species = new ArrayList<ISpecie>();
 	protected List<IAnimal> animals = new ArrayList<IAnimal>();
 	
-	/*@Before
+	public void setGameState(IGameState gameState) {this.gameState = gameState;}
+	
+	@Before
 	public void setUp() {
 		availableEnvironments.add("NextEnvironment");
 		Mockito.when(environmentProvider.getAvailableEnvironments()).thenReturn(availableEnvironments);
@@ -50,7 +52,7 @@ public class IGameStateTest {
 		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).catchAnimal(null);
 		Mockito.doThrow(new IllegalStateException()).when(getTestInstance()).catchAnimal(animal);
 		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).getSpecieLevel(null);
-	}*/
+	}
 	
 	protected IGameState getTestInstance() {
 		return gameState;
