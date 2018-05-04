@@ -20,7 +20,7 @@ public class NamedObjectTest {
 	}
 	
 	@Test
-	public void testGetName(){
+	public void testGetName() {
 		assertEquals(namedObject.getName(),"toto");
-}
+	}
 }
