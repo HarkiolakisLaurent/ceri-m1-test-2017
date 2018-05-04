@@ -19,23 +19,28 @@ public class IEnvironmentTest {
 	@Mock
 	protected IEnvironment environment;
 	
+	protected List<ISpecie> species = new ArrayList<ISpecie>();
+	protected ISpecie specie = null;
+	
+	/*@Before
+	public void setUp() {
+		Mockito.when(getTestInstance().getAreas()).thenReturn(5);
+		for (int i = 0;i<3;i++)
+			species.add(specie);
+		Mockito.when(getTestInstance().getSpecies()).thenReturn(species);
+	}*/
+	
 	protected IEnvironment getTestInstance() {
 		return environment;
 	}
 	
 	@Test
 	public void testGetAreas() {
-		Mockito.when(getTestInstance().getAreas()).thenReturn(5);
 		assertEquals(getTestInstance().getAreas(),5);
 	}
 	
 	@Test
 	public void testGetSpecies() {
-		List<ISpecie> species = new ArrayList<ISpecie>();
-		ISpecie specie = null;
-		for (int i = 0;i<3;i++)
-			species.add(specie);
-		Mockito.when(getTestInstance().getSpecies()).thenReturn(species);
 		assertEquals(getTestInstance().getSpecies(),species);
 	}
 	

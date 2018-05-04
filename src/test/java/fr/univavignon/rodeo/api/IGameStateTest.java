@@ -31,11 +31,11 @@ public class IGameStateTest {
 	@Mock
 	protected IAnimal animal;
 	
-	private List<String> availableEnvironments = new ArrayList<String>();
-	private List<ISpecie> species = new ArrayList<ISpecie>();
-	private List<IAnimal> animals = new ArrayList<IAnimal>();
+	protected List<String> availableEnvironments = new ArrayList<String>();
+	protected List<ISpecie> species = new ArrayList<ISpecie>();
+	protected List<IAnimal> animals = new ArrayList<IAnimal>();
 	
-	@Before
+	/*@Before
 	public void setUp() {
 		availableEnvironments.add("NextEnvironment");
 		Mockito.when(environmentProvider.getAvailableEnvironments()).thenReturn(availableEnvironments);
@@ -50,9 +50,9 @@ public class IGameStateTest {
 		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).catchAnimal(null);
 		Mockito.doThrow(new IllegalStateException()).when(getTestInstance()).catchAnimal(animal);
 		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).getSpecieLevel(null);
-	}
+	}*/
 	
-	IGameState getTestInstance() {
+	protected IGameState getTestInstance() {
 		return gameState;
 	}
 	

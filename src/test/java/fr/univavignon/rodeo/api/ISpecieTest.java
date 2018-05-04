@@ -19,23 +19,28 @@ public class ISpecieTest {
 	@Mock
 	protected ISpecie specie;
 	
-	ISpecie getTestInstance() {
+	protected List<IAnimal> animals = new ArrayList<IAnimal>();
+	protected IAnimal animal = null;
+	
+	protected ISpecie getTestInstance() {
 		return specie;
 	}
+
+	/*@Before
+	public void setUp() {
+		Mockito.when(getTestInstance().getArea()).thenReturn(1);
+		for (int i = 0;i<3;i++)
+			animals.add(animal);
+		Mockito.when(getTestInstance().getAnimals()).thenReturn(animals);
+	}*/
 	
 	@Test
 	public void testGetArea() {
-		Mockito.when(getTestInstance().getArea()).thenReturn(1);
 		assertEquals(getTestInstance().getArea(),1);
 	}
 	
 	@Test
 	public void testGetAnimals() {
-		List<IAnimal> animals = new ArrayList<IAnimal>();
-		IAnimal animal = null;
-		for (int i = 0;i<3;i++)
-			animals.add(animal);
-		Mockito.when(getTestInstance().getAnimals()).thenReturn(animals);
 		assertEquals(getTestInstance().getAnimals(),animals);
 	}
 	

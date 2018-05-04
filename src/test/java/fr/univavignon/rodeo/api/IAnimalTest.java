@@ -18,31 +18,35 @@ public class IAnimalTest {
 	@Mock
 	protected IAnimal animal;
 	
+	/*@Before
+	public void setUp() {
+		Mockito.when(getTestInstance().getXP()).thenReturn(1);
+		Mockito.when(getTestInstance().isSecret()).thenReturn(true);
+		Mockito.when(getTestInstance().isEndangered()).thenReturn(true);
+		Mockito.when(getTestInstance().isBoss()).thenReturn(true);
+	}*/
+	
 	protected IAnimal getTestInstance() {
 		return animal;
 	}
 	
 	@Test
 	public void testGetXP() {
-		Mockito.when(getTestInstance().getXP()).thenReturn(1);
 		assertEquals(getTestInstance().getXP(),1);
 	}
 	
 	@Test
 	public void testIsSecret() {
-		Mockito.when(getTestInstance().isSecret()).thenReturn(true);
 		assertEquals(getTestInstance().isSecret(),true);
 	}
 	
 	@Test
 	public void testIsEndangered() {
-		Mockito.when(getTestInstance().isEndangered()).thenReturn(true);
 		assertEquals(getTestInstance().isEndangered(),true);
 	}
 	
 	@Test
 	public void testIsBoss() {
-		Mockito.when(getTestInstance().isBoss()).thenReturn(true);
 		assertEquals(getTestInstance().isBoss(),true);
 	}
 	

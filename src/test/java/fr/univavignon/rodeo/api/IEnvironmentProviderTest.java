@@ -17,10 +17,16 @@ public class IEnvironmentProviderTest {
 	@Mock
 	protected IEnvironmentProvider environmentProvider;
 	
-	@Before
+	protected List<String> availableEnvironments = new ArrayList<String>();
+	
+	/*@Before
 	public void setUp() {
 		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).getEnvironment(null);
-	}
+		availableEnvironments.add("Environment1");
+		availableEnvironments.add("Environment2");
+		Mockito.when(getTestInstance().getAvailableEnvironments()).thenReturn(availableEnvironments);
+		Mockito.when(getTestInstance().getEnvironment("")).thenReturn(null);
+	}*/
 	
 	protected IEnvironmentProvider getTestInstance() {
 		return environmentProvider;
@@ -29,18 +35,12 @@ public class IEnvironmentProviderTest {
 	
 	@Test
 	public void testGetAvailableEnvironments() {
-		List<String> availableEnvironments = new ArrayList<String>();
-		availableEnvironments.add("Environment1");
-		availableEnvironments.add("Environment2");
-		Mockito.when(getTestInstance().getAvailableEnvironments()).thenReturn(availableEnvironments);
 		assertEquals(getTestInstance().getAvailableEnvironments(),availableEnvironments);
 	}
 	
 	@Test
 	public void testGetEnvironment() {
-		IEnvironment environment = null;
-		Mockito.when(getTestInstance().getEnvironment("")).thenReturn(environment);
-		assertEquals(getTestInstance().getEnvironment(""),environment);
+		assertEquals(getTestInstance().getEnvironment(""),null);
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
