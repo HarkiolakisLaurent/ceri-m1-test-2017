@@ -25,7 +25,7 @@ public class EnvironmentProviderTest extends IEnvironmentProviderTest {
 		environments.add(environment);
 	}
 	
-	@Test
+	/*@Test
 	public void testGetAvailableEnvironments() {
 		assertEquals(environmentProvider.getAvailableEnvironments(),environments);
 	}
@@ -38,6 +38,6 @@ public class EnvironmentProviderTest extends IEnvironmentProviderTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void testGetEnvironmentIllegalArgumentException() {
 		environmentProvider.getEnvironment(null);
-	}
+	}*/
 	
 }
