@@ -15,7 +15,7 @@ public class EnvironmentProvider {
 	}
 	
 	public List<String> getAvailableEnvironments() {
-		ArrayList<String> environments = new ArrayList<String>();
+		List<String> environments = new ArrayList<String>();
 		for(IEnvironment environment : this.environments) {
 			environments.add(environment.getName());
 		}

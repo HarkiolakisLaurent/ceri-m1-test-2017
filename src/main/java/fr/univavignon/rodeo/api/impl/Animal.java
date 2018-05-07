@@ -4,7 +4,6 @@ import fr.univavignon.rodeo.api.IAnimal;
 
 public class Animal extends NamedObject implements IAnimal {
 	
-	private String name;
 	private int xp; 
 	private boolean secret; 
 	private boolean endangered; 

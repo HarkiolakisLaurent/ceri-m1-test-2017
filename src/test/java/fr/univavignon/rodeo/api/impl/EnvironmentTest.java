@@ -25,7 +25,7 @@ public class EnvironmentTest extends IEnvironmentTest {
 		species.add(specie);
 	}
 	
-	@Test
+	/*@Test
 	public void testGetAreas() {
 		//assertEquals(environment.getAreas(),0);
 		assertEquals(0,0);
@@ -35,6 +35,6 @@ public class EnvironmentTest extends IEnvironmentTest {
 	public void testGetSpecies() {
 		//assertEquals(environment.getSpecies(),species);
 		assertEquals(0,0);
-	}
+	}*/
 	
 }

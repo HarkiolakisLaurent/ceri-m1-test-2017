@@ -23,16 +23,16 @@ public class GameStateProviderTest extends IGameStateProviderTest {
 		//gameStateProvider 
 	}
 	
-	@Test
+	/*@Test
 	public void testGet() {
 		//assertEquals(gameStateProvider.get("TestGameState"),gameState);
 		assertEquals(0,0);
 	}
 	
-	@Test/*(expected = IllegalArgumentException.class)*/
+	@Test//(expected = IllegalArgumentException.class)
 	public void testGetIllegalArgumentException() {
 		//getTestInstance().get(null);
 		assertEquals(0,0);
-	}
+	}*/
 	
 }

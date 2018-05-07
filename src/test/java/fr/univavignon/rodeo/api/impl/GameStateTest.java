@@ -18,7 +18,7 @@ public class GameStateTest extends IGameStateTest {
 		//gameState 
 	}
 	
-	@Test
+	/*@Test
 	public void testExploreArea() {
 		//assertEquals(environmentProvider.getAvailableEnvironments(),availableEnvironments);
 		//assertEquals(environment.getSpecies(),species);
@@ -26,7 +26,7 @@ public class GameStateTest extends IGameStateTest {
 		
 	}
 	
-	@Test/*(expected = IllegalStateException.class)*/
+	@Test//(expected = IllegalStateException.class)
 	public void testExploreAreaIllegalStateException() {
 		//gameState.exploreArea();
 		assertEquals(0,0);
@@ -39,13 +39,13 @@ public class GameStateTest extends IGameStateTest {
 		assertEquals(0,0);
 	}
 	
-	@Test/*(expected = IllegalArgumentException.class)*/
+	@Test//(expected = IllegalArgumentException.class)
 	public void testCatchAnimalIllegalArgumentException() {
 		//gameState.catchAnimal(null);
 		assertEquals(0,0);
 	}
 	
-	@Test/*(expected = IllegalStateException.class)*/
+	@Test//(expected = IllegalStateException.class)
 	public void testCatchAnimalIllegalStateException() {
 		//gameState.catchAnimal(animal);
 		assertEquals(0,0);
@@ -57,7 +57,7 @@ public class GameStateTest extends IGameStateTest {
 		assertEquals(0,0);
 	}
 	
-	@Test/*(expected = IllegalArgumentException.class)*/
+	@Test//(expected = IllegalArgumentException.class)
 	public void testGetSpecieLevelIllegalArgumentException() {
 		//getTestInstance().getSpecieLevel(null);
 		assertEquals(0,0);
@@ -67,5 +67,5 @@ public class GameStateTest extends IGameStateTest {
 	public void testGetProgression() {
 		//assertEquals(getTestInstance().getProgression(),1);
 		assertEquals(0,0);
-	}
+	}*/
 }

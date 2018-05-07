@@ -28,7 +28,7 @@ public class GameStateProvider {
 					return gameState;
 			}
 		}
-		return new GameState("toto",0);
+		return new GameState("toto",10);
 	
 	}
 		

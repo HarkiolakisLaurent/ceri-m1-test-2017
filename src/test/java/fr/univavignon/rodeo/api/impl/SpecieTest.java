@@ -19,7 +19,7 @@ public class SpecieTest extends ISpecieTest {
 		//specie 
 	}
 	
-	@Test
+	/*@Test
 	public void testGetArea() {
 		//assertEquals(specie.getArea(),1);
 		assertEquals(0,0);
@@ -29,6 +29,6 @@ public class SpecieTest extends ISpecieTest {
 	public void testGetAnimals() {
 		//assertEquals(specie.getAnimals(),animals);
 		assertEquals(0,0);
-	}
+	}*/
 	
 }
