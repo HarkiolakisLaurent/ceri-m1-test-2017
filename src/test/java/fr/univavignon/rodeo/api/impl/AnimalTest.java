@@ -10,7 +10,6 @@ import fr.univavignon.rodeo.api.IAnimalTest;
 public class AnimalTest extends IAnimalTest {
 	
 	@Override
-	public IAnimal getTestInstance() {
-		return new Animal("toto",10,false,false,false);
-	}
+	public IAnimal getTestInstance() {return new Animal("toto",10,false,false,false);}
+	
 }

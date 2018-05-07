@@ -7,7 +7,6 @@ import fr.univavignon.rodeo.api.INamedObjectTest;
 public class NamedObjectTest extends INamedObjectTest {
 	
 	@Override
-	public INamedObject getTestInstance() {
-		return new NamedObject("toto");
-	}
+	public INamedObject getTestInstance() {return new NamedObject("toto");}
+	
 }

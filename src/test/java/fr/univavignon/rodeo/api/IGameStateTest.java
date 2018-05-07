@@ -40,7 +40,7 @@ public class IGameStateTest {
 	protected static List<ISpecie> species = new ArrayList<ISpecie>();
 	
 	public static IGameState setUp() {
-		gameState=mock(IGameState.class);
+		gameState = mock(IGameState.class);
 		doThrow(new IllegalStateException()).when(gameState).exploreArea();
 		doThrow(new IllegalArgumentException()).when(gameState).catchAnimal(null);
 		doThrow(new IllegalArgumentException()).when(gameState).getSpecieLevel(null);
@@ -50,51 +50,33 @@ public class IGameStateTest {
 		return gameState;
 	}
 	
-	protected IGameState getTestInstance() {
-		return setUp();
-	}
+	protected IGameState getTestInstance() {return setUp();}
 	
 	@Test
 	public void testExploreArea() {
 		assertEquals(environmentProvider.getAvailableEnvironments(),availableEnvironments);
 		assertEquals(environment.getSpecies(),species);
-		
 	}
 	
 	@Test(expected = IllegalStateException.class)
-	public void testExploreAreaIllegalStateException() {
-		getTestInstance().exploreArea();
-		
-	}
+	public void testExploreAreaIllegalStateException() {getTestInstance().exploreArea();}
 	
 	/*@Test
-	public void testCatchAnimal() {
-		assertEquals(environment.getSpecies().contains(specie),true);
-	}*/
+	public void testCatchAnimal() {assertEquals(environment.getSpecies().contains(specie),true);}*/
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testCatchAnimalIllegalArgumentException() {
-		getTestInstance().catchAnimal(null);
-	}
+	public void testCatchAnimalIllegalArgumentException() {getTestInstance().catchAnimal(null);}
 	
 	@Test(expected = IllegalStateException.class)
-	public void testCatchAnimalIllegalStateException() {
-		getTestInstance().catchAnimal(animal);
-	}
+	public void testCatchAnimalIllegalStateException() {getTestInstance().catchAnimal(animal);}
 	
 	@Test
-	public void testGetSpecieLevel() {
-		assertEquals(getTestInstance().getSpecieLevel(specie),SpecieLevel.NOVICE);
-	}
+	public void testGetSpecieLevel() {assertEquals(getTestInstance().getSpecieLevel(specie),SpecieLevel.NOVICE);}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testGetSpecieLevelIllegalArgumentException() {
-		getTestInstance().getSpecieLevel(null);
-	}
+	public void testGetSpecieLevelIllegalArgumentException() {getTestInstance().getSpecieLevel(null);}
 	
 	@Test
-	public void testGetProgression() {
-		assertEquals(getTestInstance().getProgression(),10);
-	}
+	public void testGetProgression() {assertEquals(getTestInstance().getProgression(),10);}
 
 }

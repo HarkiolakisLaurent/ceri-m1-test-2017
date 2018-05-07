@@ -39,14 +39,10 @@ public class IEnvironmentTest {
 		return environment;
 	}
 	
-	protected IEnvironment getTestInstance() {
-		return setUp();
-	}
+	protected IEnvironment getTestInstance() {return setUp();}
 	
 	@Test
-	public void testGetAreas() {
-		assertEquals(getTestInstance().getAreas(),5);
-	}
+	public void testGetAreas() {assertEquals(getTestInstance().getAreas(),5);}
 	
 	@Test
 	public void testGetSpecies() {

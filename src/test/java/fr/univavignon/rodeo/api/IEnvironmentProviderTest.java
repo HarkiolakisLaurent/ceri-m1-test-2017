@@ -34,23 +34,15 @@ public class IEnvironmentProviderTest {
 		return environmentProvider;
 	}
 	
-	public IEnvironmentProvider getTestInstance() {
-		return setUp();
-	}
+	public IEnvironmentProvider getTestInstance() {return setUp();}
 	
 	@Test
-	public void testGetAvailableEnvironments() {
-		assertEquals(getTestInstance().getAvailableEnvironments(),availableEnvironments);
-	}
+	public void testGetAvailableEnvironments() {assertEquals(getTestInstance().getAvailableEnvironments(),availableEnvironments);}
 	
 	@Test
-	public void testGetEnvironment() {
-		assertEquals(getTestInstance().getEnvironment(""),null);
-	}
+	public void testGetEnvironment() {assertEquals(getTestInstance().getEnvironment(""),null);}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void testGetEnvironmentIllegalArgumentException() {
-		getTestInstance().getEnvironment(null);
-	}
+	public void testGetEnvironmentIllegalArgumentException() {getTestInstance().getEnvironment(null);}
 	
 }

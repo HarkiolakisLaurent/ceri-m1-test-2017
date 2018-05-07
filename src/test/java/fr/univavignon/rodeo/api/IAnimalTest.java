@@ -28,28 +28,18 @@ public class IAnimalTest {
 		return animal;
 	}
 	
-	protected IAnimal getTestInstance() {
-		return setUp();
-	}
+	protected IAnimal getTestInstance() {return setUp();}
 	
 	@Test
-	public void testGetXP() {
-		assertEquals(getTestInstance().getXP(),10);
-	}
+	public void testGetXP() {assertEquals(getTestInstance().getXP(),10);}
 	
 	@Test
-	public void testIsSecret() {
-		assertEquals(getTestInstance().isSecret(),false);
-	}
+	public void testIsSecret() {assertEquals(getTestInstance().isSecret(),false);}
 	
 	@Test
-	public void testIsEndangered() {
-		assertEquals(getTestInstance().isEndangered(),false);
-	}
+	public void testIsEndangered() {assertEquals(getTestInstance().isEndangered(),false);}
 	
 	@Test
-	public void testIsBoss() {
-		assertEquals(getTestInstance().isBoss(),false);
-	}
+	public void testIsBoss() {assertEquals(getTestInstance().isBoss(),false);}
 	
 }

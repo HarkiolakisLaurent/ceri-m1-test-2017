@@ -23,13 +23,9 @@ public class INamedObjectTest {
 		return namedObject;
 	}
 	
-	protected INamedObject getTestInstance() {
-		return setUp();
-	}
+	protected INamedObject getTestInstance() {return setUp();}
 	
 	@Test
-	public void testGetName(){
-		assertEquals(getTestInstance().getName(),"toto");
-	}
+	public void testGetName() {assertEquals(getTestInstance().getName(),"toto");}
 
 }

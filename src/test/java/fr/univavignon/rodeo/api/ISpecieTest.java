@@ -34,14 +34,10 @@ public class ISpecieTest {
 	    return specie;
 	}
 	
-	protected ISpecie getTestInstance() {
-		return setUp();
-	}
+	protected ISpecie getTestInstance() {return setUp();}
 	
 	@Test
-	public void testGetArea() {
-		assertEquals(getTestInstance().getArea(),10);
-	}
+	public void testGetArea() {assertEquals(getTestInstance().getArea(),10);}
 	
 	@Test
 	public void testGetAnimals() {
