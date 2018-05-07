@@ -7,9 +7,15 @@ import java.util.List;
 
 import org.junit.*;
 import org.mockito.*;
+
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.mock;
+
 import org.mockito.junit.*;
 
 import fr.univavignon.rodeo.api.IEnvironment;
+import fr.univavignon.rodeo.api.impl.Animal;
+import fr.univavignon.rodeo.api.impl.Specie;
 
 public class IEnvironmentTest {
 	
@@ -17,21 +23,25 @@ public class IEnvironmentTest {
 	public MockitoRule rule = MockitoJUnit.rule();
 
 	@Mock
-	protected IEnvironment environment;
+	protected static IEnvironment environment;
 	
 	protected List<ISpecie> species = new ArrayList<ISpecie>();
 	protected ISpecie specie = null;
 	
-	@Before
-	public void setUp() {
-		Mockito.when(getTestInstance().getAreas()).thenReturn(5);
-		for (int i = 0;i<3;i++)
-			species.add(specie);
-		Mockito.when(getTestInstance().getSpecies()).thenReturn(species);
+	public static IEnvironment setUp() {
+		environment = mock(IEnvironment.class);
+        when(environment.getName()).thenReturn("Environment1");
+        when(environment.getAreas()).thenReturn(5);
+		List<IAnimal> animals = new ArrayList<IAnimal>();
+		animals.add(new Animal("Animal1",10,false,false,false));				
+		List<ISpecie> species = new ArrayList<ISpecie>();
+		species.add(new Specie("Specie1",10,animals));
+        when(environment.getSpecies()).thenReturn(species);
+		return environment;
 	}
 	
 	protected IEnvironment getTestInstance() {
-		return environment;
+		return setUp();
 	}
 	
 	@Test
@@ -41,6 +51,12 @@ public class IEnvironmentTest {
 	
 	@Test
 	public void testGetSpecies() {
+		List<IAnimal> animals = new ArrayList<IAnimal>();
+		animals.add(IAnimalTest.setUp());				
+		List<ISpecie> species = new ArrayList<ISpecie>();
+		species.add(ISpecieTest.setUp());
+		assertEquals(species.size(), environment.getSpecies().size());
+		assertEquals("Specie1", environment.getSpecies().get(0).getName());
 		assertEquals(getTestInstance().getSpecies(),species);
 	}
 	

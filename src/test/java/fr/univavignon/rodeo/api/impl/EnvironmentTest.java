@@ -8,33 +8,22 @@ import java.util.List;
 import org.junit.*;
 import org.mockito.Mockito;
 
+import fr.univavignon.rodeo.api.IAnimal;
+import fr.univavignon.rodeo.api.IAnimalTest;
 import fr.univavignon.rodeo.api.IEnvironment;
 import fr.univavignon.rodeo.api.IEnvironmentTest;
 import fr.univavignon.rodeo.api.ISpecie;
+import fr.univavignon.rodeo.api.ISpecieTest;
 
 public class EnvironmentTest extends IEnvironmentTest {
 	
-	private IEnvironment environment;
-	private List<ISpecie> species;
-	private ISpecie specie;
-	
-	/*@Before
-	public void setUp() {
-		species = new ArrayList<ISpecie>();
-		specie = new Specie("toto",1,null);
-		species.add(specie);
+	@Override
+	public IEnvironment getTestInstance() {
+		List<IAnimal> animals = new ArrayList<IAnimal>();
+		animals.add(IAnimalTest.setUp());				
+		List<ISpecie> species = new ArrayList<ISpecie>();
+		species.add(ISpecieTest.setUp());
+		return new Environment("Environment1",5,species) ;
 	}
-	
-	@Test
-	public void testGetAreas() {
-		//assertEquals(environment.getAreas(),0);
-		assertEquals(0,0);
-	}
-	
-	@Test
-	public void testGetSpecies() {
-		//assertEquals(environment.getSpecies(),species);
-		assertEquals(0,0);
-	}*/
 	
 }

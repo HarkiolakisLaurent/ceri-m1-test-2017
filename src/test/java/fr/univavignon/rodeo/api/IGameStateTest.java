@@ -7,6 +7,11 @@ import java.util.List;
 
 import org.junit.*;
 import org.mockito.*;
+
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.doThrow;
+
 import org.mockito.junit.*;
 
 import fr.univavignon.rodeo.api.IGameState;
@@ -17,43 +22,36 @@ public class IGameStateTest {
 	public MockitoRule rule = MockitoJUnit.rule();
 	
 	@Mock
-	protected IGameState gameState;
+	protected static IGameState gameState;
 	
 	@Mock
-	protected IEnvironmentProvider environmentProvider;
+	protected static IEnvironmentProvider environmentProvider;
 	
 	@Mock
-	protected ISpecie specie;
+	protected static ISpecie specie = ISpecieTest.setUp();
 	
 	@Mock
-	protected IEnvironment environment;
+	protected static IEnvironment environment;
 	
 	@Mock
-	protected IAnimal animal;
+	protected static IAnimal animal;
 	
 	protected List<String> availableEnvironments = new ArrayList<String>();
-	protected List<ISpecie> species = new ArrayList<ISpecie>();
-	protected List<IAnimal> animals = new ArrayList<IAnimal>();
+	protected static List<ISpecie> species = new ArrayList<ISpecie>();
 	
-	@Before
-	public void setUp() {
-		availableEnvironments.add("NextEnvironment");
-		Mockito.when(environmentProvider.getAvailableEnvironments()).thenReturn(availableEnvironments);
-		Mockito.when(environment.getSpecies()).thenReturn(species);
-		animals.add(animal);
-		Mockito.when(specie.getAnimals()).thenReturn(animals);
-		species.add(specie);
-		Mockito.when(environment.getSpecies()).thenReturn(species);
-		Mockito.when(getTestInstance().getSpecieLevel(specie)).thenReturn(SpecieLevel.NOVICE);
-		Mockito.when(getTestInstance().getProgression()).thenReturn(1);
-		Mockito.doThrow(new IllegalStateException()).when(getTestInstance()).exploreArea();
-		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).catchAnimal(null);
-		Mockito.doThrow(new IllegalStateException()).when(getTestInstance()).catchAnimal(animal);
-		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).getSpecieLevel(null);
+	public static IGameState setUp() {
+		gameState=mock(IGameState.class);
+		doThrow(new IllegalStateException()).when(gameState).exploreArea();
+		doThrow(new IllegalArgumentException()).when(gameState).catchAnimal(null);
+		doThrow(new IllegalArgumentException()).when(gameState).getSpecieLevel(null);
+		doThrow(new IllegalStateException()).when(gameState).catchAnimal(animal);
+        when(gameState.getSpecieLevel(specie)).thenReturn(SpecieLevel.NOVICE);
+        when(gameState.getProgression()).thenReturn(10);
+		return gameState;
 	}
 	
 	protected IGameState getTestInstance() {
-		return gameState;
+		return setUp();
 	}
 	
 	@Test
@@ -96,7 +94,7 @@ public class IGameStateTest {
 	
 	@Test
 	public void testGetProgression() {
-		assertEquals(getTestInstance().getProgression(),1);
+		assertEquals(getTestInstance().getProgression(),10);
 	}
 
 }

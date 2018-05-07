@@ -7,6 +7,9 @@ import java.util.List;
 
 import org.junit.*;
 import org.mockito.*;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.doThrow;
 import org.mockito.junit.*;
 
 public class IEnvironmentProviderTest {
@@ -15,22 +18,24 @@ public class IEnvironmentProviderTest {
 	public MockitoRule rule = MockitoJUnit.rule();
 	
 	@Mock
-	protected IEnvironmentProvider environmentProvider;
+	protected static IEnvironmentProvider environmentProvider;
 	
-	protected List<String> availableEnvironments = new ArrayList<String>();
+	@Mock
+	protected static IEnvironment environment = IEnvironmentTest.setUp();
 	
-	@Before
-	public void setUp() {
-		Mockito.doThrow(new IllegalArgumentException()).when(getTestInstance()).getEnvironment(null);
+	protected static List<String> availableEnvironments = new ArrayList<String>();
+	
+	public static IEnvironmentProvider setUp() {
+		environmentProvider = mock(IEnvironmentProvider.class);
+        when(environmentProvider.getEnvironment("Environment1")).thenReturn(environment);
+		doThrow(new IllegalArgumentException()).when(environmentProvider).getEnvironment(null);
 		availableEnvironments.add("Environment1");
-		availableEnvironments.add("Environment2");
-		Mockito.when(getTestInstance().getAvailableEnvironments()).thenReturn(availableEnvironments);
-		Mockito.when(getTestInstance().getEnvironment("")).thenReturn(null);
+        when(environmentProvider.getAvailableEnvironments()).thenReturn(availableEnvironments);
+		return environmentProvider;
 	}
 	
-	protected IEnvironmentProvider getTestInstance() {
-		return environmentProvider;
-		
+	public IEnvironmentProvider getTestInstance() {
+		return setUp();
 	}
 	
 	@Test

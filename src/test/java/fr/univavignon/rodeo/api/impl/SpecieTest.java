@@ -2,9 +2,14 @@ package fr.univavignon.rodeo.api.impl;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.*;
 import org.mockito.Mockito;
 
+import fr.univavignon.rodeo.api.IAnimal;
+import fr.univavignon.rodeo.api.IAnimalTest;
 import fr.univavignon.rodeo.api.IGameState;
 import fr.univavignon.rodeo.api.ISpecie;
 import fr.univavignon.rodeo.api.ISpecieTest;
@@ -12,23 +17,11 @@ import fr.univavignon.rodeo.api.SpecieLevel;
 
 public class SpecieTest extends ISpecieTest {
 	
-	private ISpecie specie;
-	
-	/*@Before
-	public void setUp() {
-		//specie 
+	@Override
+	public  ISpecie getTestInstance() {
+		List<IAnimal> animals = new ArrayList<IAnimal>();
+		animals.add(IAnimalTest.setUp());
+		return new Specie("Specie1",10,animals) ;
 	}
-	
-	@Test
-	public void testGetArea() {
-		//assertEquals(specie.getArea(),1);
-		assertEquals(0,0);
-	}
-	
-	@Test
-	public void testGetAnimals() {
-		//assertEquals(specie.getAnimals(),animals);
-		assertEquals(0,0);
-	}*/
 	
 }

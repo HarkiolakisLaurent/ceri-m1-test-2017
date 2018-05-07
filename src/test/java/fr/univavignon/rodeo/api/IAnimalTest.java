@@ -5,6 +5,7 @@ import org.mockito.*;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.mock;
 
 import org.mockito.junit.*;
 
@@ -18,36 +19,37 @@ public class IAnimalTest {
 	@Mock
 	protected IAnimal animal;
 	
-	@Before
-	public void setUp() {
-		Mockito.when(getTestInstance().getXP()).thenReturn(1);
-		Mockito.when(getTestInstance().isSecret()).thenReturn(true);
-		Mockito.when(getTestInstance().isEndangered()).thenReturn(true);
-		Mockito.when(getTestInstance().isBoss()).thenReturn(true);
+	public static IAnimal setUp() {
+		IAnimal animal = mock(IAnimal.class);	
+		when(animal.getXP()).thenReturn(10);
+        when(animal.isSecret()).thenReturn(false);
+        when(animal.isEndangered()).thenReturn(false);
+        when(animal.isBoss()).thenReturn(false);
+		return animal;
 	}
 	
 	protected IAnimal getTestInstance() {
-		return animal;
+		return setUp();
 	}
 	
 	@Test
 	public void testGetXP() {
-		assertEquals(getTestInstance().getXP(),1);
+		assertEquals(getTestInstance().getXP(),10);
 	}
 	
 	@Test
 	public void testIsSecret() {
-		assertEquals(getTestInstance().isSecret(),true);
+		assertEquals(getTestInstance().isSecret(),false);
 	}
 	
 	@Test
 	public void testIsEndangered() {
-		assertEquals(getTestInstance().isEndangered(),true);
+		assertEquals(getTestInstance().isEndangered(),false);
 	}
 	
 	@Test
 	public void testIsBoss() {
-		assertEquals(getTestInstance().isBoss(),true);
+		assertEquals(getTestInstance().isBoss(),false);
 	}
 	
 }

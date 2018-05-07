@@ -16,20 +16,20 @@ public class INamedObjectTest {
 	public MockitoRule rule = MockitoJUnit.rule();
 	
 	@Mock
-	protected INamedObject namedObject;
+	protected static INamedObject namedObject;
 	
-	@Before
-	public void setUp() {
+	public static INamedObject setUp() {
 		Mockito.when(namedObject.getName()).thenReturn("toto");
+		return namedObject;
 	}
 	
 	protected INamedObject getTestInstance() {
-		return namedObject;
+		return setUp();
 	}
 	
 	@Test
 	public void testGetName(){
-		assertEquals(namedObject.getName(),"toto");
+		assertEquals(getTestInstance().getName(),"toto");
 	}
 
 }
