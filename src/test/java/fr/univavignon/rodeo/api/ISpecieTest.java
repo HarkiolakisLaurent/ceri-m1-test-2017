@@ -21,8 +21,8 @@ public class ISpecieTest {
 	@Mock
 	protected static ISpecie specie;
 	
-	protected List<IAnimal> animals = new ArrayList<IAnimal>();
-	protected IAnimal animal = null;
+	protected List<IAnimal> animals;
+	protected IAnimal animal;
 	
 	public static ISpecie setUp() {
 		ISpecie specie = mock(ISpecie.class);
@@ -45,12 +45,11 @@ public class ISpecieTest {
 	
 	@Test
 	public void testGetAnimals() {
-		ISpecie specie = getTestInstance();
-		List<IAnimal> animals = new ArrayList<IAnimal>();
-		IAnimal animal = IAnimalTest.setUp();
+		animals = new ArrayList<IAnimal>();
+		animal = IAnimalTest.setUp();
 		animals.add(animal);
-		assertEquals(animals.size(), specie.getAnimals().size());
-		assertEquals(animal.getName(),specie.getAnimals().get(0).getName());
+		assertEquals(animals.size(), getTestInstance().getAnimals().size());
+		assertEquals(animal.getName(),getTestInstance().getAnimals().get(0).getName());
 	}
 	
 }

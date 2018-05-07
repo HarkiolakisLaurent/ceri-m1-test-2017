@@ -56,5 +56,5 @@ public class GameState extends NamedObject implements IGameState {
 		}
 	}
 
-	public int getProgression() {return 0;}
+	public int getProgression() {return 10;}
 }

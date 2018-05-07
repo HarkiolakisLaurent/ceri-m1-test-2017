@@ -18,7 +18,7 @@ import fr.univavignon.rodeo.api.SpecieLevel;
 public class SpecieTest extends ISpecieTest {
 	
 	@Override
-	public  ISpecie getTestInstance() {
+	public ISpecie getTestInstance() {
 		List<IAnimal> animals = new ArrayList<IAnimal>();
 		animals.add(IAnimalTest.setUp());
 		return new Specie("Specie1",10,animals) ;

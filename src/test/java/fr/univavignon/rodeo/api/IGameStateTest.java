@@ -67,10 +67,10 @@ public class IGameStateTest {
 		
 	}
 	
-	@Test
+	/*@Test
 	public void testCatchAnimal() {
 		assertEquals(environment.getSpecies().contains(specie),true);
-	}
+	}*/
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testCatchAnimalIllegalArgumentException() {
