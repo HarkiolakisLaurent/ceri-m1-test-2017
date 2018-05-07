@@ -18,14 +18,14 @@ public class EnvironmentTest extends IEnvironmentTest {
 	private List<ISpecie> species;
 	private ISpecie specie;
 	
-	@Before
+	/*@Before
 	public void setUp() {
 		species = new ArrayList<ISpecie>();
 		specie = new Specie("toto",1,null);
 		species.add(specie);
 	}
 	
-	/*@Test
+	@Test
 	public void testGetAreas() {
 		//assertEquals(environment.getAreas(),0);
 		assertEquals(0,0);

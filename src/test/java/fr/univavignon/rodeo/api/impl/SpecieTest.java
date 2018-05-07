@@ -14,12 +14,12 @@ public class SpecieTest extends ISpecieTest {
 	
 	private ISpecie specie;
 	
-	@Before
+	/*@Before
 	public void setUp() {
 		//specie 
 	}
 	
-	/*@Test
+	@Test
 	public void testGetArea() {
 		//assertEquals(specie.getArea(),1);
 		assertEquals(0,0);

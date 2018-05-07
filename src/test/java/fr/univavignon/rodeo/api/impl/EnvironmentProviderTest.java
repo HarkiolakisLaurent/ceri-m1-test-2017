@@ -18,7 +18,7 @@ public class EnvironmentProviderTest extends IEnvironmentProviderTest {
 	private List<IEnvironment> environments;
 	private IEnvironment environment;
 	
-	@Before
+	/*@Before
 	public void setUp() {
 		environments = new ArrayList<IEnvironment>();
 		environment = new Environment("Environment1",1,null);
@@ -26,7 +26,7 @@ public class EnvironmentProviderTest extends IEnvironmentProviderTest {
 		environmentProvider = new EnvironmentProvider(environments);
 	}
 	
-	/*@Test
+	@Test
 	public void testGetAvailableEnvironments() {
 		//assertEquals(environmentProvider.getAvailableEnvironments(),environments);
 		assertEquals(0,0);

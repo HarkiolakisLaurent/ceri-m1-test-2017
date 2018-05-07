@@ -11,12 +11,12 @@ public class AnimalTest extends IAnimalTest {
 	
 	private IAnimal animal;
 	
-	@Before
+	/*@Before
 	public void setUp() {
 		animal = new Animal("toto",10,false,false,false);
 	}
 	
-	/*@Test
+	@Test
 	public void testGetXP(){
 		assertEquals(animal.getXP(),10);
 	}

@@ -18,12 +18,12 @@ public class GameStateProviderTest extends IGameStateProviderTest {
 	private IGameStateProvider gameStateProvider;
 	private IGameState gameState;
 	
-	@Before
+	/*@Before
 	public void setUp() {
 		//gameStateProvider 
 	}
 	
-	/*@Test
+	@Test
 	public void testGet() {
 		//assertEquals(gameStateProvider.get("TestGameState"),gameState);
 		assertEquals(0,0);

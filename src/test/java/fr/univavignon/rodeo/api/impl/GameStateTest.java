@@ -13,12 +13,12 @@ public class GameStateTest extends IGameStateTest {
 	
 	private IGameState gameState;
 	
-	@Before
+	/*@Before
 	public void setUp() {
 		//gameState 
 	}
 	
-	/*@Test
+	@Test
 	public void testExploreArea() {
 		//assertEquals(environmentProvider.getAvailableEnvironments(),availableEnvironments);
 		//assertEquals(environment.getSpecies(),species);
