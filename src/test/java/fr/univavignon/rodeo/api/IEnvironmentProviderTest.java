@@ -29,7 +29,7 @@ public class IEnvironmentProviderTest {
 		environmentProvider = mock(IEnvironmentProvider.class);
         when(environmentProvider.getEnvironment("Environment1")).thenReturn(environment);
 		doThrow(new IllegalArgumentException()).when(environmentProvider).getEnvironment(null);
-		availableEnvironments.add("Environment1");
+		availableEnvironments.add("");
         when(environmentProvider.getAvailableEnvironments()).thenReturn(availableEnvironments);
 		return environmentProvider;
 	}
@@ -40,7 +40,7 @@ public class IEnvironmentProviderTest {
 	public void testGetAvailableEnvironments() {assertEquals(getTestInstance().getAvailableEnvironments(),availableEnvironments);}
 	
 	@Test
-	public void testGetEnvironment() {assertEquals(getTestInstance().getEnvironment(""),null);}
+	public void testGetEnvironment() {assertEquals(getTestInstance().getEnvironment("Environment1").getName(),environment.getName());}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testGetEnvironmentIllegalArgumentException() {getTestInstance().getEnvironment(null);}

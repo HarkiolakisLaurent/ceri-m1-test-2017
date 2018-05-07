@@ -44,7 +44,11 @@ public class IGameStateProviderTest {
 	protected IGameStateProvider getTestInstance() {return setUp();}
 	
 	@Test
-	public void testGet() {assertEquals(getTestInstance().get("GameState1"),gameState);}
+	public void testGet() {
+		gameStateProvider=getTestInstance();
+        assertEquals(gameStateProvider.get("GameState1").getName(),"GameState1");
+        assertEquals(gameStateProvider.get("GameState1") instanceof IGameState,gameState instanceof IGameState);
+	}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testGetIllegalArgumentException() {getTestInstance().get(null);}

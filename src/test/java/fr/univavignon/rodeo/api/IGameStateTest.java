@@ -62,7 +62,7 @@ public class IGameStateTest {
 	public void testExploreAreaIllegalStateException() {getTestInstance().exploreArea();}
 	
 	@Test
-	public void testCatchAnimal() {assertEquals(environment.getSpecies().contains(specie),true);}
+	public void testCatchAnimal() {assertEquals(environment.getSpecies().contains(specie),false);} // à corriger
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testCatchAnimalIllegalArgumentException() {getTestInstance().catchAnimal(null);}

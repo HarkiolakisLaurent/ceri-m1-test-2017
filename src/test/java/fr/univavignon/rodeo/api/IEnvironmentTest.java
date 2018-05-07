@@ -50,9 +50,8 @@ public class IEnvironmentTest {
 		animals.add(IAnimalTest.setUp());				
 		List<ISpecie> species = new ArrayList<ISpecie>();
 		species.add(ISpecieTest.setUp());
-		//assertEquals(species.size(), getTestInstance().getSpecies().size());
+		assertEquals(species.size(), getTestInstance().getSpecies().size());
 		assertEquals("Specie1", getTestInstance().getSpecies().get(0).getName());
-		//assertEquals(getTestInstance().getSpecies(),species);
 	}
 	
 }
