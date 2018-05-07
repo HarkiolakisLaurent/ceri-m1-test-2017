@@ -7,8 +7,7 @@ public class GameStateProviderTest extends IGameStateProviderTest {
 	
 	@Override
 	public IGameStateProvider getTestInstance() {
-		//return (IGameStateProvider) new GameStateProvider();
-		return IGameStateProviderTest.setUp();
+		return (IGameStateProvider) new GameStateProvider();
 	}
 	
 }

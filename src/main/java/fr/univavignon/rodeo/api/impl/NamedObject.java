@@ -3,7 +3,7 @@ package fr.univavignon.rodeo.api.impl;
 import fr.univavignon.rodeo.api.INamedObject;
 
 public class NamedObject implements INamedObject {
-	private String name; 
+	protected String name; 
 
 	public NamedObject(String name) {this.name = name;}
 

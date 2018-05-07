@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.univavignon.rodeo.api.IEnvironment;
+import fr.univavignon.rodeo.api.IEnvironmentProvider;
 
-public class EnvironmentProvider {
+public class EnvironmentProvider implements IEnvironmentProvider {
 
 	private List<IEnvironment> environments;
 	private static EnvironmentProvider instance;

@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.univavignon.rodeo.api.IGameState;
+import fr.univavignon.rodeo.api.IGameStateProvider;
 
-public class GameStateProvider {
+public class GameStateProvider implements IGameStateProvider {
 		
 	private List<IGameState> gameStates;
 	private static GameStateProvider instance;
@@ -28,7 +29,7 @@ public class GameStateProvider {
 					return gameState;
 			}
 		}
-		return new GameState("toto",10);
+		return new GameState("GameState1");
 	
 	}
 		

@@ -9,9 +9,9 @@ public class GameState extends NamedObject implements IGameState {
 	private int progression;
 	private static GameState instance;
 	
-	public GameState(String name, int progression) {
+	public GameState(String name) {
 		super(name);
-		this.progression = progression;
+		this.progression = 10;
 	}
 
 	public static synchronized GameState getInstance() {

@@ -13,9 +13,9 @@ public class EnvironmentProviderTest extends IEnvironmentProviderTest {
 	@Override
 	public IEnvironmentProvider getTestInstance() {
 		List<IEnvironment> environments = new ArrayList<IEnvironment>();
-		environments.add(IEnvironmentTest.setUp());
-		//return (IEnvironmentProvider) new EnvironmentProvider(environments);
-		return IEnvironmentProviderTest.setUp();
+		IEnvironment environment = IEnvironmentTest.setUp();
+		environments.add(environment);
+		return (IEnvironmentProvider) new EnvironmentProvider(environments);
 	}
 	
 }
