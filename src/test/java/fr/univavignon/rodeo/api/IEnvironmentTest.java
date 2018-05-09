@@ -29,7 +29,7 @@ public class IEnvironmentTest {
 	
 	public static IEnvironment setUp() {
 		environment = mock(IEnvironment.class);
-        when(environment.getName()).thenReturn("");
+        when(environment.getName()).thenReturn("Environment1");
         when(environment.getAreas()).thenReturn(5);
 		List<IAnimal> animals = new ArrayList<IAnimal>();
 		animals.add(new Animal("Animal1",10,false,false,false));				
