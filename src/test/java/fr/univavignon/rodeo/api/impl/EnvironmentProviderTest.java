@@ -15,8 +15,8 @@ public class EnvironmentProviderTest extends IEnvironmentProviderTest {
 		List<IEnvironment> environments = new ArrayList<IEnvironment>();
 		IEnvironment environment = IEnvironmentTest.setUp();
 		environments.add(environment);
-		//return new EnvironmentProvider(environments);
-		return IEnvironmentProviderTest.setUp();
+		return new EnvironmentProvider(environments);
+		//return IEnvironmentProviderTest.setUp();
 	}
 	
 }
