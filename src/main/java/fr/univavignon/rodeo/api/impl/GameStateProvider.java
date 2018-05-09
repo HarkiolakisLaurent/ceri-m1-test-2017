@@ -10,7 +10,9 @@ public class GameStateProvider implements IGameStateProvider {
 		
 	private List<IGameState> gameStates;
 		
-	public GameStateProvider() {gameStates = new ArrayList<IGameState>();}
+	public GameStateProvider() {
+		gameStates = new ArrayList<IGameState>();
+	}
 	
 	public void save(IGameState gameState) {/*if(gameState != null)	this.gameStates.add(gameState);*/}
 	
