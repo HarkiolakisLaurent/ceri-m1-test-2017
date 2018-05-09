@@ -28,9 +28,6 @@ public class IGameStateTest {
 	protected static IEnvironmentProvider environmentProvider;
 	
 	protected static ISpecie noviceSpecie = ISpecieTest.setUp();
-	/*protected static ISpecie wranglerSpecie = ISpecieTest.setUp();
-	protected static ISpecie championSpecie = ISpecieTest.setUp();
-	protected static ISpecie masterSpecie = ISpecieTest.setUp();*/
 	
 	@Mock
 	protected static IEnvironment environment;
@@ -47,10 +44,7 @@ public class IGameStateTest {
 		doThrow(new IllegalArgumentException()).when(gameState).catchAnimal(null);
 		doThrow(new IllegalArgumentException()).when(gameState).getSpecieLevel(null);
 		doThrow(new IllegalStateException()).when(gameState).catchAnimal(animal);
-        when(gameState.getSpecieLevel(noviceSpecie)).thenReturn(SpecieLevel.NOVICE);
-        /*when(gameState.getSpecieLevel(wranglerSpecie)).thenReturn(SpecieLevel.WRANGLER);
-        when(gameState.getSpecieLevel(championSpecie)).thenReturn(SpecieLevel.CHAMPION);
-        when(gameState.getSpecieLevel(masterSpecie)).thenReturn(SpecieLevel.MASTER);*/
+        when(gameState.getSpecieLevel(noviceSpecie)).thenReturn(null);
         when(gameState.getProgression()).thenReturn(10);
 		return gameState;
 	}
@@ -67,7 +61,7 @@ public class IGameStateTest {
 	public void testExploreAreaIllegalStateException() {getTestInstance().exploreArea();}
 	
 	@Test
-	public void testCatchAnimal() {assertEquals(environment.getSpecies().contains(noviceSpecie),false);} // à corriger
+	public void testCatchAnimal() {assertEquals(environment.getSpecies().contains(noviceSpecie),false);}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testCatchAnimalIllegalArgumentException() {getTestInstance().catchAnimal(null);}
@@ -76,12 +70,7 @@ public class IGameStateTest {
 	public void testCatchAnimalIllegalStateException() {getTestInstance().catchAnimal(animal);}
 	
 	@Test
-	public void testGetSpecieLevel() {
-		assertEquals(getTestInstance().getSpecieLevel(noviceSpecie),SpecieLevel.NOVICE);
-		/*assertEquals(getTestInstance().getSpecieLevel(wranglerSpecie),SpecieLevel.WRANGLER);
-		assertEquals(getTestInstance().getSpecieLevel(championSpecie),SpecieLevel.CHAMPION);
-		assertEquals(getTestInstance().getSpecieLevel(masterSpecie),SpecieLevel.MASTER);*/
-	}
+	public void testGetSpecieLevel() {assertEquals(getTestInstance().getSpecieLevel(noviceSpecie),null);}
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void testGetSpecieLevelIllegalArgumentException() {getTestInstance().getSpecieLevel(null);}

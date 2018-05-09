@@ -18,7 +18,7 @@ public class EnvironmentTest extends IEnvironmentTest {
 		animals.add(IAnimalTest.setUp());				
 		List<ISpecie> species = new ArrayList<ISpecie>();
 		species.add(ISpecieTest.setUp());
-		return new Environment("Environment1",5,species) ;
+		return new Environment("",5,species) ;
 	}
 	
 }
