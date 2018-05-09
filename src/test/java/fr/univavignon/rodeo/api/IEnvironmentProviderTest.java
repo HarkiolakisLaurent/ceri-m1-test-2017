@@ -20,7 +20,6 @@ public class IEnvironmentProviderTest {
 	@Mock
 	protected static IEnvironmentProvider environmentProvider;
 	
-	@Mock
 	protected static IEnvironment environment = IEnvironmentTest.setUp();
 	
 	public static IEnvironmentProvider setUp() {
@@ -44,6 +43,7 @@ public class IEnvironmentProviderTest {
 	
 	@Test
 	public void testGetEnvironment() {
+		IEnvironment environment = IEnvironmentTest.setUp();
 		assertEquals(getTestInstance().getEnvironment("Environment1").getName(),environment.getName());
 	}
 	

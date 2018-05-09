@@ -16,7 +16,6 @@ public class EnvironmentProviderTest extends IEnvironmentProviderTest {
 		IEnvironment environment = IEnvironmentTest.setUp();
 		environments.add(environment);
 		return new EnvironmentProvider(environments);
-		//return IEnvironmentProviderTest.setUp();
 	}
 	
 }
