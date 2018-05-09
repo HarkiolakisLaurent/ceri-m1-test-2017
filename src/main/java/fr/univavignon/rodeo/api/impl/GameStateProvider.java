@@ -17,11 +17,12 @@ public class GameStateProvider implements IGameStateProvider {
 	public void save(IGameState gameState) {;/*if(gameState != null)	this.gameStates.add(gameState);*/}
 	
 	public IGameState get(String name) throws IllegalArgumentException {
-		if(name == null)
-			throw new IllegalArgumentException();
-		for(IGameState gameState : gameStates) {
-			if(gameState.getName().equals(name))
-				return gameState;
+		if(name == null)	throw new IllegalArgumentException();
+		else {
+			for(IGameState gameState : gameStates) {
+				if(gameState.getName().equals(name))
+					return gameState;
+			}
 		}
 		IGameState gameState2 = new GameState("GameState2");
 		gameStates.add(gameState2);
