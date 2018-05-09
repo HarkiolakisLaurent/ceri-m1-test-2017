@@ -18,7 +18,11 @@ public class Specie extends NamedObject implements ISpecie {
 		this.animals = animals ; 
 	}
 	
-	public int getArea() {return this.area;}
+	public int getArea() {
+		return this.area;
+	}
 
-	public List<IAnimal> getAnimals() {return this.animals;}
+	public List<IAnimal> getAnimals() {
+		return this.animals;
+	}
 }

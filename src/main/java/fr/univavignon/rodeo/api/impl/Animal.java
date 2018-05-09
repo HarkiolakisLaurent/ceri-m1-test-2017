@@ -17,11 +17,19 @@ public class Animal extends NamedObject implements IAnimal {
 		this.boss = boss;
 	}
 
-	public int getXP() {return this.xp;}
+	public int getXP() {
+		return this.xp;
+	}
 
-	public boolean isSecret() {return this.secret;}
+	public boolean isSecret() {
+		return this.secret;
+	}
 
-	public boolean isEndangered() {return this.endangered;}
+	public boolean isEndangered() {
+		return this.endangered;
+	}
 
-	public boolean isBoss() {return this.boss;}
+	public boolean isBoss() {
+		return this.boss;
+	}
 }

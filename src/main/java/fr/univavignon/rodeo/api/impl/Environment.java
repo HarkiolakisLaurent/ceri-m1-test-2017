@@ -7,6 +7,7 @@ import fr.univavignon.rodeo.api.IEnvironment;
 import fr.univavignon.rodeo.api.ISpecie;
 
 public class Environment extends NamedObject implements IEnvironment {
+	
 	private int areas;
 	private List<ISpecie> species;
 	
@@ -17,8 +18,12 @@ public class Environment extends NamedObject implements IEnvironment {
 		this.species = species;
 	}
 
-	public int getAreas() {return this.areas;}
+	public int getAreas() {
+		return this.areas;
+	}
 
-	public List<ISpecie> getSpecies() {return this.species;}
+	public List<ISpecie> getSpecies() {
+		return this.species;
+	}
 
 }

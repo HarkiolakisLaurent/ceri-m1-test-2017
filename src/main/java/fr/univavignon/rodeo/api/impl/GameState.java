@@ -6,6 +6,7 @@ import fr.univavignon.rodeo.api.ISpecie;
 import fr.univavignon.rodeo.api.SpecieLevel;
 
 public class GameState extends NamedObject implements IGameState {
+	
 	private int progression;
 	
 	public GameState(String name) {
@@ -38,7 +39,7 @@ public class GameState extends NamedObject implements IGameState {
 				xp += animal.getXP();
 			if(xp < 25)
 				return SpecieLevel.NOVICE;
-			else{
+			else {
 				if(xp >= 25 && xp < 150)
 					return SpecieLevel.WRANGLER;
 				else {
@@ -51,5 +52,7 @@ public class GameState extends NamedObject implements IGameState {
 		}
 	}
 
-	public int getProgression() {return 10;}
+	public int getProgression() {
+		return 10;
+	}
 }
