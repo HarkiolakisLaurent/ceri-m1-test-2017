@@ -25,9 +25,5 @@ public class Environment extends NamedObject implements IEnvironment {
 	public static synchronized Environment getInstance() {
 		return instance == null?null:instance;
 	}
-	
-	public void setName(String name) {
-		this.name = name;
-	}
 
 }
