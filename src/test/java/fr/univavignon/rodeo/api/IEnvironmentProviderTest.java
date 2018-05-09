@@ -23,14 +23,13 @@ public class IEnvironmentProviderTest {
 	@Mock
 	protected static IEnvironment environment = IEnvironmentTest.setUp();
 	
-	protected static List<String> availableEnvironments = new ArrayList<String>();
-	
 	public static IEnvironmentProvider setUp() {
 		environmentProvider = mock(IEnvironmentProvider.class);
         when(environmentProvider.getEnvironment("Environment1")).thenReturn(environment);
 		doThrow(new IllegalArgumentException()).when(environmentProvider).getEnvironment(null);
-		availableEnvironments.add("Environment1");
-        when(environmentProvider.getAvailableEnvironments()).thenReturn(availableEnvironments);
+		List<String> environments = new ArrayList<String>();
+		environments.add("Environment1");
+        when(environmentProvider.getAvailableEnvironments()).thenReturn(environments);
 		return environmentProvider;
 	}
 	
@@ -38,8 +37,9 @@ public class IEnvironmentProviderTest {
 	
 	@Test
 	public void testGetAvailableEnvironments() {
-		availableEnvironments.add("Environment1");
-		assertEquals(getTestInstance().getAvailableEnvironments(),availableEnvironments);
+		List<String> environments = new ArrayList<String>();
+		environments.add("Environment1");
+		assertEquals(getTestInstance().getAvailableEnvironments(),environments);
 	}
 	
 	@Test

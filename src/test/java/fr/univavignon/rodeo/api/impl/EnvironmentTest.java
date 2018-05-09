@@ -1,12 +1,7 @@
 package fr.univavignon.rodeo.api.impl;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import org.junit.*;
-import org.mockito.Mockito;
 
 import fr.univavignon.rodeo.api.IAnimal;
 import fr.univavignon.rodeo.api.IAnimalTest;
@@ -23,7 +18,7 @@ public class EnvironmentTest extends IEnvironmentTest {
 		animals.add(IAnimalTest.setUp());				
 		List<ISpecie> species = new ArrayList<ISpecie>();
 		species.add(ISpecieTest.setUp());
-		return new Environment("Environment1",1,species) ;
+		return new Environment("Environment1",5,species) ;
 	}
 	
 }

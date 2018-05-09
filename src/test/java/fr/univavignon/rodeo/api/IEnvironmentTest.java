@@ -30,7 +30,7 @@ public class IEnvironmentTest {
 	public static IEnvironment setUp() {
 		environment = mock(IEnvironment.class);
         when(environment.getName()).thenReturn("Environment1");
-        when(environment.getAreas()).thenReturn(1);
+        when(environment.getAreas()).thenReturn(5);
 		List<IAnimal> animals = new ArrayList<IAnimal>();
 		animals.add(new Animal("Animal1",10,false,false,false));				
 		List<ISpecie> species = new ArrayList<ISpecie>();
@@ -42,7 +42,7 @@ public class IEnvironmentTest {
 	protected IEnvironment getTestInstance() {return setUp();}
 	
 	@Test
-	public void testGetAreas() {assertEquals(getTestInstance().getAreas(),1);}
+	public void testGetAreas() {assertEquals(getTestInstance().getAreas(),5);}
 	
 	@Test
 	public void testGetSpecies() {
