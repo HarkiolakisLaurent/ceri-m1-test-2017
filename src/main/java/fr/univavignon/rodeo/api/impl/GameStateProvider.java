@@ -14,20 +14,17 @@ public class GameStateProvider implements IGameStateProvider {
 		gameStates = new ArrayList<IGameState>();
 	}
 	
-	public void save(IGameState gameState) {/*if(gameState != null)	this.gameStates.add(gameState);*/}
+	public void save(IGameState gameState) {;/*if(gameState != null)	this.gameStates.add(gameState);*/}
 	
 	public IGameState get(String name) throws IllegalArgumentException {
 		if(name == null)
 			throw new IllegalArgumentException();
-		else {
-			for(IGameState gameState : gameStates) {
-				if(gameState.getName().equals(name))
-					return gameState;
-			}
-			IGameState gameState2 = new GameState("GameState2");
-			gameStates.add(gameState2);
-			return gameState2;
+		for(IGameState gameState : gameStates) {
+			if(gameState.getName().equals(name))
+				return gameState;
 		}
-	
+		IGameState gameState2 = new GameState("GameState2");
+		gameStates.add(gameState2);
+		return gameState2;
 	}
 }
