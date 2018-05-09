@@ -12,7 +12,7 @@ public class GameStateProvider implements IGameStateProvider {
 		
 	public GameStateProvider() {gameStates = new ArrayList<IGameState>();}
 	
-	public void save(IGameState gameState) {;/*if(gameState != null)	this.gameStates.add(gameState);*/}
+	public void save(IGameState gameState) {/*if(gameState != null)	this.gameStates.add(gameState);*/}
 	
 	public IGameState get(String name) throws IllegalArgumentException {
 		if(name == null)	throw new IllegalArgumentException();
@@ -21,9 +21,9 @@ public class GameStateProvider implements IGameStateProvider {
 				if(gameState.getName().equals(name))
 					return gameState;
 			}
+			IGameState gameState2 = new GameState("GameState2");
+			gameStates.add(gameState2);
+			return gameState2;
 		}
-		IGameState gameState2 = new GameState("GameState2");
-		gameStates.add(gameState2);
-		return gameState2;
 	}
 }
