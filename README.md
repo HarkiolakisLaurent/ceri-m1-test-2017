@@ -1,6 +1,6 @@
 # ceri-m1-test
 
-Par HARKIOLAKIS Laurent [![CircleCI](https://circleci.com/gh/HarkiolakisLaurent/ceri-m1-test-2017/tree/master.svg?style=svg)](https://circleci.com/gh/HarkiolakisLaurent/ceri-m1-test-2017/tree/master) <img src="https://codecov.io/gh/HarkiolakisLaurent/ceri-m1-test-2017/branch/master/graph/badge.svg" /> [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a83588c2dbec40b18d2e58c8597885ad)](https://www.codacy.com/app/HarkiolakisLaurent/ceri-m1-test-2017?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HarkiolakisLaurent/ceri-m1-test-2017&amp;utm_campaign=Badge_Grade)
+Par HARKIOLAKIS Laurent et EZZAHIDI Meryem [![CircleCI](https://circleci.com/gh/HarkiolakisLaurent/ceri-m1-test-2017/tree/master.svg?style=svg)](https://circleci.com/gh/HarkiolakisLaurent/ceri-m1-test-2017/tree/master) <img src="https://codecov.io/gh/HarkiolakisLaurent/ceri-m1-test-2017/branch/master/graph/badge.svg" /> [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a83588c2dbec40b18d2e58c8597885ad)](https://www.codacy.com/app/HarkiolakisLaurent/ceri-m1-test-2017?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=HarkiolakisLaurent/ceri-m1-test-2017&amp;utm_campaign=Badge_Grade)
 
 ## Resources
 

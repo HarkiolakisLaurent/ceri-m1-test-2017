@@ -6,6 +6,6 @@ import fr.univavignon.rodeo.api.IGameStateProviderTest;
 public class GameStateProviderTest extends IGameStateProviderTest {
 	
 	@Override
-	public IGameStateProvider getTestInstance() {return (IGameStateProvider) new GameStateProvider();}
+	public IGameStateProvider getTestInstance() {return new GameStateProvider();}
 	
 }
