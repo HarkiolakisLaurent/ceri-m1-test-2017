@@ -10,7 +10,7 @@ public class EnvironmentProvider implements IEnvironmentProvider {
 
 	private List<IEnvironment> environments;
 	
-	public EnvironmentProvider(List<IEnvironment> environments) {this.environments.addAll(environments);}
+	public EnvironmentProvider(List<IEnvironment> environments) {this.environments = environments;}
 	
 	public List<String> getAvailableEnvironments() {
 		List<String> environments = new ArrayList<String>();
@@ -21,14 +21,15 @@ public class EnvironmentProvider implements IEnvironmentProvider {
 	}
 
 	public IEnvironment getEnvironment(String name) throws IllegalArgumentException {
+		IEnvironment environmentFound = null;
 		if(name == null)
 			throw new IllegalArgumentException();
 		else {
 			for(IEnvironment environment : this.environments) {
 				if(environment.getName().equals(name))
-					return environment;
+					environmentFound = environment;
 			}
 		}
-		return null;
+		return environmentFound;
 	}
 }
