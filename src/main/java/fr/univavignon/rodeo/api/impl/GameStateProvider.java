@@ -28,7 +28,9 @@ public class GameStateProvider implements IGameStateProvider {
 					return gameState;
 			}
 		}
-		return new GameState("GameState1");
+		IGameState gameState2 = new GameState("GameState2");
+		gameStates.add(gameState2);
+		return gameState2;
 	
 	}
 }
