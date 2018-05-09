@@ -10,7 +10,7 @@ public class EnvironmentProvider implements IEnvironmentProvider {
 
 	private List<IEnvironment> environments;
 	
-	public EnvironmentProvider(List<IEnvironment> environments) {this.environments = environments;}
+	public EnvironmentProvider(List<IEnvironment> environments) {this.environments.addAll(environments);}
 	
 	public List<String> getAvailableEnvironments() {
 		List<String> environments = new ArrayList<String>();
