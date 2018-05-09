@@ -9,7 +9,6 @@ import fr.univavignon.rodeo.api.IGameStateProvider;
 public class GameStateProvider implements IGameStateProvider {
 		
 	private List<IGameState> gameStates;
-	private static GameStateProvider instance;
 		
 	public GameStateProvider() {
 		gameStates = new ArrayList<IGameState>();
@@ -31,9 +30,5 @@ public class GameStateProvider implements IGameStateProvider {
 		}
 		return new GameState("GameState1");
 	
-	}
-		
-	public static synchronized GameStateProvider getInstance() {
-		return instance == null?null:instance;
 	}
 }

@@ -9,11 +9,6 @@ import fr.univavignon.rodeo.api.IEnvironmentProvider;
 public class EnvironmentProvider implements IEnvironmentProvider {
 
 	private List<IEnvironment> environments;
-	private static EnvironmentProvider instance;
-
-	public EnvironmentProvider(List<IEnvironment> environments) {
-		this.environments = environments ;
-	}
 	
 	public List<String> getAvailableEnvironments() {
 		List<String> environments = new ArrayList<String>();
@@ -32,9 +27,5 @@ public class EnvironmentProvider implements IEnvironmentProvider {
 				return environment;
 		}
 		return null;
-	}
-		
-	public static synchronized EnvironmentProvider getInstance() {
-		return instance == null?null:instance;
 	}
 }

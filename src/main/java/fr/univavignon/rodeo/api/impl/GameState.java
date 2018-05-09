@@ -7,15 +7,10 @@ import fr.univavignon.rodeo.api.SpecieLevel;
 
 public class GameState extends NamedObject implements IGameState {
 	private int progression;
-	private static GameState instance;
 	
 	public GameState(String name) {
 		super(name);
 		this.progression = 10;
-	}
-
-	public static synchronized GameState getInstance() {
-		return instance == null?null:instance;
 	}
 
 	public void exploreArea() throws IllegalStateException {

@@ -10,7 +10,6 @@ public class Specie extends NamedObject implements ISpecie {
 	
 	private int area;
 	private List<IAnimal> animals;
-	private static Specie instance;
 	
 	public Specie(String name, int area, List<IAnimal> animals){
 		super(name);
@@ -22,8 +21,4 @@ public class Specie extends NamedObject implements ISpecie {
 	public int getArea() {return this.area;}
 
 	public List<IAnimal> getAnimals() {return this.animals;}
-		
-	public static synchronized Specie getInstance() {
-		return instance == null?null:instance;
-	}
 }
