@@ -44,7 +44,7 @@ public class IEnvironmentProviderTest {
 	
 	@Test
 	public void testGetEnvironment() {
-		//assertEquals(getTestInstance().getEnvironment("Environment1").getName(),environment.getName());
+		assertEquals(getTestInstance().getEnvironment("Environment1").getName(),environment.getName());
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
