@@ -15,8 +15,7 @@ public class GameStateProvider implements IGameStateProvider {
 	}
 	
 	public void save(IGameState gameState) {
-		if(gameState != null)
-			this.gameStates.add(gameState);
+		//if(gameState != null)	this.gameStates.add(gameState);
 	}
 	
 	public IGameState get(String name) throws IllegalArgumentException {

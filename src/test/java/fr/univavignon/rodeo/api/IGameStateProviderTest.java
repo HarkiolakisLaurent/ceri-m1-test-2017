@@ -49,6 +49,7 @@ public class IGameStateProviderTest {
 	@Test
 	public void testGet() {
         assertEquals(getTestInstance().get("GameState1") instanceof IGameState,gameState instanceof IGameState);
+        assertEquals(getTestInstance().get("GameState2") instanceof IGameState,gameState instanceof IGameState);
         assertEquals(getTestInstance().get("GameState2").getName(),"GameState2");
 	}
 	
